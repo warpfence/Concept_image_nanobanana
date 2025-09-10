@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nano Banana Image Mixer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <nav>
+      <h1><i class="fa-solid fa-wand-magic-sparkles"></i> Nano Banana Image Mixer</h1>
+    </nav>
+    <main>
+      <section id="hero">
+        <h2>Unleash Your Creativity</h2>
+        <p>
+          Upload an image, provide a style concept, and let Gemini generate a unique artistic blend.
+        </p>
+      </section>
+
+      <div class="main-content">
+        <section class="card" id="input-card">
+            <h3>1. Input Image</h3>
+            <div id="upload-area" class="upload-box">
+                <div id="upload-placeholder">
+                    <i class="fa-solid fa-upload"></i>
+                    <p>Click to upload or drag & drop</p>
+                </div>
+                <img id="input-preview" class="preview-image" alt="Input preview" />
+                <input type="file" id="image-upload" accept="image/*" hidden />
+            </div>
+        </section>
+
+        <section class="card" id="concept-card">
+            <h3>2. Concept Image</h3>
+            <div id="concept-upload-area" class="upload-box">
+                <div id="concept-placeholder">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <p>Click to upload or drag & drop</p>
+                </div>
+                <img id="concept-preview" class="preview-image" alt="Concept preview" />
+                <input type="file" id="concept-upload" accept="image/*" hidden />
+            </div>
+        </section>
+      </div>
+
+      <section id="action-section">
+        <button id="generate-btn" disabled>
+          <i class="fa-solid fa-rocket"></i> Generate
+        </button>
+      </section>
+
+      <section class="card" id="result-card">
+        <h3>Result</h3>
+        <div id="result-area">
+          <div id="result-placeholder">
+            <p>Your generated image will appear here</p>
+          </div>
+          <div id="loader" class="hidden"></div>
+          <div id="result-container" class="hidden">
+            <img id="result-image" class="preview-image" alt="Generated image" />
+            <p id="result-text"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+        <p>Powered by Gemini 2.5 Flash Image Preview (Nano Banana)</p>
+    </footer>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

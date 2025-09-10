@@ -1,0 +1,5 @@
+{
+  "name": "Nano Banana Image Mixer",
+  "description": "Upload the first image, InputImage, and the second image, ConceptImage, and create a new InputImage image by using the Gemini 2.5 Flash Image Model (Nano Banana) to create a similar background, action, and appearance to ConceptImage images.",
+  "requestFramePermissions": []
+}
